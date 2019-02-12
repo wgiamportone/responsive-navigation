@@ -1,0 +1,122 @@
+/* Navigation layout */
+.nav__primary-link,
+.nav__secondary-link {
+  box-sizing: border-box;
+  display: block;
+}
+
+.nav__primary-link {
+  padding: 0 24px;
+  font: 21px/48px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.nav__primary-link--children {
+  padding-right: 48px;
+  position: relative;
+}
+
+.nav__secondary-nav {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.nav__secondary-link {
+  font: 16/48 Galaxie;
+  padding: 12px 24px;
+}
+
+.nav__secondary-link:hover {
+  background: #eee;
+  color: #ec008c;
+}
+
+.nav__dropdown {
+  border-bottom: 4px solid #ec008c;
+  border-right: 4px solid #ec008c;
+  height: 12px;
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  transform: rotate(45deg);
+  width: 12px;
+}
+
+/* Mobile navigation open */
+.is-open .nav {
+  min-height: calc(100vh - 110px);
+}
+
+/* Sub Navigation open */
+.nav__primary-nav-item--open .nav__dropdown {
+  border-top: 4px solid #ec008c;
+  border-left: 4px solid #ec008c;
+  border-bottom: 0;
+  border-right: 0;
+  top: 18px;
+}
+
+.nav__primary-nav-item--open .nav__secondary-nav {
+  max-height: 9999px;
+  overflow: hidden;
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+  .nav ul {
+    display: flex;
+  }
+
+  .nav__primary-nav-item {
+    position: relative;
+  }
+
+  .nav__primary-link {
+    color: #fff;
+    padding-bottom: 10px;
+    padding-top: 14px;
+  }
+
+  .nav__primary-link--children {
+    padding-right: 24px;
+  }
+
+  .nav__primary-link:hover {
+    background: #fff;
+    color: #ec008c;
+  }
+
+  .nav__dropdown {
+    display: none;
+  }
+
+  .nav__secondary-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    left: -9999px;
+    position: absolute;
+    top: 100%;
+    z-index: 9999;
+  }
+
+  .nav__secondary-link  {
+    background: #fff;
+    min-width: 222px;
+  }
+
+  /* Desktop navigation open */
+  .is-open .nav {
+    min-height: initial;
+  }
+
+  /* Sub Navigation open */
+  .nav__primary-nav-item--open .nav__primary-link--children {
+    background: #fff;
+    color: #ec008c;
+  }
+
+  .nav__primary-nav-item--open .nav__secondary-nav {
+    left: 0;
+  }
+}
