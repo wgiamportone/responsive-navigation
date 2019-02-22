@@ -1,8 +1,3 @@
-/* Imports */
-@import "reset.css";
-@import "fonts.css";
-@import "nav.css";
-
 /* Base */
 body {
   font: 14px/24px GalaxieCopernicusBook;
@@ -10,10 +5,9 @@ body {
 }
 
 h1 {
-  font: 44px/48px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  margin: 0 0 50px;
+  font: 44px/48px GalaxieCopernicusBook;
   letter-spacing: -0.015em;
+  margin: 0 0 50px;
 }
 
 p {
@@ -103,8 +97,8 @@ li {
 /* Mobile navigation open */
 .is-open,
 .is-open body {
-  display: block;
   box-sizing: border-box;
+  display: block;
   height: 100vh;
   overflow: hidden;
   width: 100vw;
@@ -129,8 +123,8 @@ li {
 
 .is-open .content-wrapper__overlay,
 .content-wrapper__overlay.is-open {
-  bottom: 0;
   background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
   left: 0;
   position: absolute;
   right: 0;
@@ -146,8 +140,7 @@ li {
   }
 
   h1 {
-    font: 120px/132px "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 700;
+    font: 120px/132px GalaxieCopernicusBook;
     margin: 0;
   }
 
@@ -162,9 +155,9 @@ li {
     display: flex;
     min-height: auto;
     position: relative;
-    width: 100%;
     -webkit-transform: translateX(0);
     transform: translateX(0);
+    width: 100%;
   }
 
   .global-header {
@@ -189,10 +182,10 @@ li {
   }
 
   .hero {
-    position: relative;
     margin-bottom: 60px;
     max-height: 640px;
     overflow: hidden;
+    position: relative;
   }
 
   .hero__img {
@@ -226,7 +219,14 @@ li {
 
   /* Desktop navigation open */
   .is-open {
-    overflow: inherit;
+    position: relative;
+  }
+
+  .is-open,
+  .is-open body {
+    height: inherit;
+    overflow: visible;
+    width: inherit;
   }
 
   .is-open .menu-icon,
@@ -236,12 +236,11 @@ li {
   }
 
   .is-open .global-header__panel {
-    height: auto;
-    overflow: inherit;
+    height: inherit;
+    overflow: visible;
   }
 
-  .is-open .content-wrapper__overlay,
   .content-wrapper__overlay.is-open {
-    height: 100%;
+    height: calc(100vh - 72px);
   }
 }
